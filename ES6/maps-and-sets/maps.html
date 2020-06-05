@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Maps</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		/*
+
+		let scores = new Map();
+		
+		scores.set("maths", 90);
+		scores.set("physics", 95);
+		scores.set("chemistry", 80);
+
+		*/
+
+		let scores = new Map([["maths", 90], ["physics", 95], ["chemistry", 80]]);
+
+		console.log(scores.get("maths"));
+		console.log(scores.get("physics"));
+		console.log(scores.get("chemistry"));
+
+		console.log(scores.size);
+
+		console.log(scores.has("maths"));
+
+		scores.delete("maths");
+
+		console.log(scores.has("maths"));
+
+		scores.clear();
+
+		console.log(scores.size);
+
+	</script>
+</body>
+</html>

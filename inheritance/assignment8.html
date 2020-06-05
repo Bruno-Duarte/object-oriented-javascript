@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 8</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function Car() {
+			this.drive = function() {
+				return "Let's go!";
+			}
+		}
+
+		function Honda(model, year) {
+			this.model = model;
+			this.year = year;
+		}
+
+		function Bmw(model, year) {
+			this.model = model;
+			this.year = year;
+		}
+
+		Honda.prototype = new Car();
+		Bmw.prototype = new Car();
+
+		Honda.prototype.constructor = Honda;
+		Bmw.prototype.constructor = Bmw;
+
+		Honda.prototype.toString = function() {
+			return "[Honda " + this.model + " year " + this.year + "]";
+		}
+
+		Bmw.prototype.toString = function() {
+			return "[Bmw " + this.model + " year " + this.year + "]";
+		}
+
+		var honda = new Honda("Model1", "2020");
+		var bmw = new Bmw("Model2", "2010");
+
+		console.log(honda.toString());
+		console.log(honda.drive());
+
+		console.log(bmw.toString());
+		console.log(bmw.drive());
+
+		console.log(Car.call(honda));
+		console.log(Car.call(bmw));
+
+	</script>
+</body>
+</html>

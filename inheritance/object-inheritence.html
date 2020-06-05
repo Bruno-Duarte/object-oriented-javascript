@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object Inheritence</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		/*
+		
+		var project = {
+			name : "Road Work"
+		};
+
+		Object.create(Object.prototype, {
+			name : {
+				configurable : true,
+				enumerable : true,
+				value : "Road Work",
+				writable : true
+			}
+		});
+
+		*/
+
+		var project1 = {
+			name : "Road Work",
+
+			display : function() {
+				console.log(this.name);
+			}
+		};
+
+		var project2 = Object.create(project1, {
+			name : {
+				configurable : true,
+				enumerable : true,
+				value : "Bridge Work",
+				writable : true
+			}
+		});
+
+		project1.display();
+		project2.display();
+
+	</script>
+</body>
+</html>

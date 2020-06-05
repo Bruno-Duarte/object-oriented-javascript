@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Set</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		/*
+		
+		let courses = new Set();
+		
+		courses.add("Angular");
+		courses.add("Node");
+		courses.add("Java");
+
+		*/
+
+		/*
+
+		let courses = new Set()
+		.add("Angular")
+		.add("Node")
+		.add("Java");
+
+		*/
+
+		let courses = new Set(["Angular", "Node", "Java"]);
+
+		console.log(courses.size);
+		console.log(courses.has("Angular"));
+
+		for (let entry of courses) {
+			console.log(entry);
+		}
+
+		courses.clear();
+
+		console.log(courses.size);
+
+	</script>
+</body>
+</html>

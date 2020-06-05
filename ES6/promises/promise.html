@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Promise</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		/*
+		
+		function myAsynFun() {
+			let promise = new Promise((resolve, reject)=>{
+				let error = false;
+				setTimeout(()=>{
+					console.log("Working asynchronously")
+					if (error) {
+						reject();
+					} else {
+						resolve();
+					}
+				}, 2000);
+			});
+
+			return promise;
+		}
+
+		myAsynFun().then(
+			()=>console.log("Work Done"),
+			()=>console.log("Error")
+		);
+
+		*/
+
+		/*
+
+		function myAsynFun() {
+			let promise = new Promise((resolve, reject)=>{
+				let error = false;
+				setTimeout(()=>{
+					console.log("Working asynchronously")
+					if (error) {
+						reject("Error");
+					} else {
+						resolve("Done");
+					}
+				}, 2000);
+			});
+
+			return promise;
+		}
+
+		myAsynFun().then(
+			(succes)=>console.log(succes),
+			(error)=>console.log(error)
+		);
+
+		*/
+
+		function myAsynFun() {
+			let promise = new Promise((resolve, reject)=>{
+				let error = false;
+				setTimeout(()=>{
+					console.log("Working asynchronously")
+					if (error) {
+						reject("Error");
+					} else {
+						resolve("Done");
+					}
+				}, 2000);
+			});
+
+			return promise;
+		}
+
+		myAsynFun().then(
+			(succes)=>console.log(succes),
+		).catch((error)=>console.log(error));
+
+	</script>
+</body>
+</html>

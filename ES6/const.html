@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Const</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		//"use strict";
+		
+		//var pi = 3.14;
+		//let pi = 3.14;
+		const pi = 3.14;
+		//pi = 3.79;
+
+		//const product = {};
+		const product = Object.freeze({});
+		//product = {};
+		product['name'] = "Iphone";
+
+		console.log(pi);
+		console.log(product);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 4</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var license = {
+			name : "John",
+			number : 1
+		};
+
+		Object.defineProperty(license, "name", 
+		{
+			enumerable : false
+		});
+
+		Object.defineProperty(license, "number", 
+		{
+			configurable : false
+		});
+
+		Object.seal(license);
+
+		var nameDescriptor = Object.getOwnPropertyDescriptor(license, "name");
+		var numberDescriptor = Object.getOwnPropertyDescriptor(license, "number");
+
+		console.log(nameDescriptor.enumerable);
+		console.log(numberDescriptor.configurable);
+		console.log(Object.isSealed(license));
+
+	</script>
+</body>
+</html>

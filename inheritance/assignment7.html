@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 7</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		var car = {
+			model : "",
+			year : "",
+
+			drive : function() {
+				return "Let's go!";
+			}
+		};
+
+		var honda = Object.create(car, {
+			model : {
+				value : "Model1"
+			},
+			year : {
+				value : "2020"
+			}
+		});
+
+		var bmw = Object.create(car, {
+			model : {
+				value : "Model2"
+			},
+			year : {
+				value : "2020"
+			}
+		});
+
+		honda.toString = function() {
+			return "[Honda " + this.model + ", " + this.year + "]";
+		}
+
+		bmw.toString = function() {
+			return "[BMW " + this.model + ", " + this.year + "]";
+		}
+
+		console.log(honda.drive());
+		console.log(honda.toString());
+		console.log(bmw.drive());
+		console.log(bmw.toString());
+
+	</script>
+</body>
+</html>

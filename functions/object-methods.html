@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object Methods</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		/*
+
+		function displayDetails() {
+			document.write(this.id + "<br>");
+			document.write(this.name + "<br>");
+		}
+
+		*/
+
+		function displayDetails(testscore1, testscore2) {
+			document.write(this.id + "<br>");
+			document.write(this.name + "<br>");
+			document.write(testscore1 + "<br>");
+			document.write(testscore2 + "<br>");
+		}
+		
+		var student = {
+			id : 1,
+			name : "Bob",
+			
+			display : function() {
+				document.write(student.id + "<br>");
+				document.write(student.name + "<br>");
+			}
+		};
+
+		/* 
+
+		var student = {
+			id : 1,
+			name : "Bob",
+			
+			display : function() {
+				document.write(this.id + "<br>");
+				document.write(this.name + "<br>");
+			}
+		};
+
+		var student1 = {
+			id : 2,
+			name : "Stephen",
+			
+			display : displayDetails
+		};
+
+		var student2 = {
+			id : 3,
+			name : "John",
+			
+			display : displayDetails
+		};
+
+		*/
+
+		var student1 = {
+			id : 2,
+			name : "Stephen",	
+		};
+
+		var student2 = {
+			id : 3,
+			name : "John",	
+		};
+
+		this.id = 4;
+		this.name = "Mary";
+
+		student.display();
+
+		/*
+
+		student1.display();
+		student2.display();
+		displayDetails();
+
+		displayDetails.call(student1);
+		displayDetails.call(student2);
+		displayDetails.call();
+
+		displayDetails.call(student1, 10);
+		displayDetails.call(student2, 20);
+		displayDetails.call(this, 30);
+
+		*/
+
+		displayDetails.apply(student1, [10, 20]);
+		displayDetails.apply(student2, [20, 30]);
+		displayDetails.apply(this, [30, 15]);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 6</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function Laptop(manifacturer, memory, capacity) {
+			this.manifacturer = manifacturer;
+			this.memory = memory;
+			this.capacity = capacity;
+
+			this.display = function() {
+				console.log(this.manifacturer);
+				console.log(this.memory);
+				console.log(this.capacity);
+			}
+		}
+
+		var laptop1 = new Laptop("Manifacturer1", "X", "Y");
+		var laptop2 = new Laptop("Manifacturer2", "A", "B");
+
+		laptop1.display();
+		laptop2.display();
+
+	</script>
+</body>
+</html>

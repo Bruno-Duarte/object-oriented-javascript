@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modular</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		/*
+		
+		var account = (function() {
+			var balance = 1000;
+
+			return {
+				name : "John",
+				
+				getBalance : function() {
+					return balance;
+				},
+				addInterest : function(interst) {
+					balance += interst;
+				}
+			};
+		}());
+
+		console.log(account.name);
+		console.log(account.getBalance());
+
+		account.balance = 2000;
+
+		console.log(account.getBalance());
+
+		account.addInterest(300);
+
+		console.log(account.getBalance());
+
+		*/
+
+		var account = (function() {
+			var balance = 1000;
+
+			function getBalance() {
+				return balance;
+			}
+			function addInterest(interst) {
+				balance += interst;
+			}
+
+			return {
+				name : "John",
+				
+				getBalance : getBalance,
+				addInterest : addInterest
+			};
+			
+		}());
+
+		console.log(account.name);
+		console.log(account.getBalance());
+
+		account.balance = 2000;
+
+		console.log(account.getBalance());
+
+		account.addInterest(300);
+
+		console.log(account.getBalance());
+
+	</script>
+</body>
+</html>

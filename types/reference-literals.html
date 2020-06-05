@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reference Literals</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		var student = {
+			"name" : "Bob",
+			"score" : 80
+		}
+
+		var s1 = new Object();
+		s1.name = "Bob";
+		s1.score = 80;
+
+		document.write(student.name + "<br>");
+		document.write(s1.name + "<br>");
+
+		var studentNames = ["John", "Bob", "Harry"];
+		var sn = new Array("John", "Bob", "Harry");
+
+		document.write(studentNames[0] + "<br>");
+		document.write(sn[0] + "<br>");
+
+		function hello(name) {
+			return "Hello " + name;
+		}
+
+		var myFunc = new Function("name", "return 'Hello ' + name");
+
+		var regEx = /\d+/;
+
+		document.write(typeof student + "<br>");
+		document.write(typeof studentNames + "<br>");
+		document.write(typeof hello + "<br>");
+
+		document.write((student instanceof Object) + "<br>");
+		document.write((studentNames instanceof Array) + "<br>");
+		document.write((hello instanceof Function) + "<br>");
+		document.write((studentNames instanceof Object) + "<br>");
+		document.write((student instanceof Array) + "<br>");
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 9</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function Car(model, year) {
+			this.model = model;
+			this.year = year;
+		}
+
+		Car.prototype.drive = function() {
+			return "Let's go!";
+		}
+
+		function Honda(model, year) {
+			Car.call(this, model, year);
+		}
+
+		function Bmw(model, year) {
+			Car.call(this, model, year);
+		}
+
+		Honda.prototype = Object.create(Car.prototype, {
+			constructor : {
+				configurable : true,
+				enumerable : true,
+				writable : true,
+				value : true
+			}
+		});
+
+		Bmw.prototype = Object.create(Car.prototype, {
+			constructor : {
+				configurable : true,
+				enumerable : true,
+				writable : true,
+				value : true
+			}
+		});
+
+		Honda.prototype.drive = function() {
+			return Car.prototype.drive.call(this) + " 80 km/h";
+		}
+
+		Bmw.prototype.drive = function() {
+			return Car.prototype.drive.call(this) + " 120 km/h";
+		}
+
+		Honda.prototype.toString = function() {
+			return "[Honda " + this.model + " year " + this.year + "]";
+		}
+
+		Bmw.prototype.toString = function() {
+			return "[BMW " + this.model + " year " + this.year + "]";
+		}
+
+		var honda = new Honda("Model1", "2010");
+		var bmw = new Bmw("Model2", "2020");
+
+		console.log(honda.drive());
+		console.log(honda.toString());
+
+		console.log(bmw.drive());
+		console.log(bmw.toString());
+
+	</script>
+</body>
+</html>

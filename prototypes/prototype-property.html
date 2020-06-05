@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prototype Property</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var myObj = {};
+		var prototype = Object.getPrototypeOf(myObj);
+
+		console.log(prototype === Object.prototype);
+		console.log(Object.prototype.isPrototypeOf(myObj));
+
+	</script>
+</body>
+</html>

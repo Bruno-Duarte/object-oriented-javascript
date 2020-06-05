@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Looping Maps</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		let scores = new Map([["maths", 90], ["physics", 95], ["chemistry", 80]]);
+
+		for (let key of scores.keys()) {
+			console.log(key);
+			console.log(scores.get(key));
+		}
+
+		for (let v of scores.values()) {
+			console.log(v);
+		}
+
+		/*
+
+		for (let e of scores.entries()) {
+			console.log(e[0], e[1]);
+		}
+
+		*/
+
+		for (let [k, v] of scores.entries()) {
+			console.log(k, v);
+		}
+
+	</script>
+</body>
+</html>
